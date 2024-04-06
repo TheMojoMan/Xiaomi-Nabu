@@ -1,2 +1,5 @@
 # Xiaomi-Nabu
-Disk images and ppa for the Xiaomi Pad 5 (nabu) tablet
+Here you can find stuff for the **Xiaomi Pad 5** tablet (code name: Nabu). Like 
+- Linux disk images (Ubuntu, Arch, ...)
+- Linux kernel for Nabu
+- Useful shell scripts
