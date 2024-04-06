@@ -159,7 +159,7 @@ install_wine_depedencies () {
 	#libappindicator -> conflicts with libappindicator:armhf
 }
 
-# The following functions are based on the work of 
+# The following functions are based on the work of https://ivonblog.com/en-us/posts/termux-proot-box86-box64/
 
 install_wine () {
 	# Download Wine binaries from Kron4ek’s Wine-Builds. This archive contains Wine and Wine64
@@ -238,30 +238,35 @@ export BOX64_NOBANNER=1 WINE=wine64 WINEPREFIX='$wine64_prefix' WINESERVER=~/win
 }
 
 make_wine32_prefix () {
-	# Open winecfg and manually add DLL overrides for d3d11, d3d10core, dxgi, and d3d9.
-	export WINEPREFIX=$1
+	local prefix=$1
+	export WINEPREFIX="${prefix/#\~/$HOME}"
 	export WINEARCH=win32
 	box86 ~/wine/bin/wine winecfg
 }
 
 make_wine64_prefix () {
-	# Open winecfg and manually add DLL overrides for d3d11, d3d10core, dxgi, and d3d9.
-	export WINEPREFIX=$1
+	local prefix=$1
+	export WINEPREFIX="${prefix/#\~/$HOME}"
 	export WINEARCH=win64
-	box64 ~/wine/bin/wine64 winecfg
+	box64 ~/wine64/bin/wine64 winecfg
 }
 
 install_dxvk () {
+	local tmp32=${wine32_prefix}
+	local prefix32="${tmp32/#\~/$HOME}"
+	local tmp64=${wine64_prefix}
+	local prefix64="${tmp64/#\~/$HOME}"
 	sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:armhf libvulkan1 libvulkan1:armhf
 	cd ~/Downloads
 	wget https://github.com/doitsujin/dxvk/releases/download/v${dxvk_version}/dxvk-${dxvk_version}.tar.gz
 	tar xvf dxvk-${dxvk_version}.tar.gz
 	rm dxvk-${dxvk_version}.tar.gz
 	cd dxvk-${dxvk_version}
-	cp -f x32/* ${wine32_prefix}/drive_c/windows/system32
-	cp -f x32/* ${wine64_prefix}/drive_c/windows/system32
-	cp -f x64/* ${wine64_prefix}/drive_c/windows/syswow64
+	cp -f x32/* $prefix32/drive_c/windows/system32
+	cp -f x32/* $prefix64/drive_c/windows/system32
+	cp -f x64/* $prefix64/drive_c/windows/syswow64
 	cd ~
+	# Open winecfg and manually add DLL overrides for d3d11, d3d10core, dxgi, and d3d9.
 }
 
 change_default_wineprefixes () {
