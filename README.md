@@ -2,9 +2,10 @@
 Linux disk images, kernels and scripts for the Xiaomi Pad 5 tablet (codename: nabu).
 
 # NEWS
- - 2025.04.21: I have uploaded "Fedora 42" for nabu!  
-   Install instructions (see below) apply accordingly i.e. you find the files in folder "2025.04.21-Fedora42" on my mega.nz page, root image name is "fedora-42-nabu.img.xz" and package manager in Fedora is "dnf" instead of "apt".  
-   Continue with instructions below, please!
+ - I have dropped support for Fedora. If you need Fedora for nabu then go here: https://github.com/nik012003/nabu-fedora-builder
+ - ~2025.04.21: I have uploaded "Fedora 42" for nabu!~  
+   ~Install instructions (see below) apply accordingly i.e. you find the files in folder "2025.04.21-Fedora42" on my mega.nz page, root image name is "fedora-42-nabu.img.xz" and package manager in Fedora is "dnf" instead of "apt".~  
+   ~Continue with instructions below, please!~
   
 # Ubuntu Linux on the Xiaomi Pad 5 (nabu)
 ![Ubuntu Linux on the Xiaomi Pad 5 (nabu)](ubuntu-nabu.png)
