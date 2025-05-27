@@ -1,0 +1,37 @@
+Package: xiaomi-nabu-alsa
+Version: 1.0
+Architecture: arm64
+Maintainer: TheMojoMan <themojoman@gmx.net>
+Depends: alsa-ucm-conf
+Filename: ./xiaomi-nabu-alsa.deb
+Size: 1446
+MD5sum: 6d5c7000722f96a1a812ae43653a4fab
+SHA1: bb15d60abdacb48115d10e2d44dcbedbe733a2ba
+SHA256: a9bf73bb570fa801334baa3bb973f3afd374319f3675193db726b5c0221bfab1
+Description: Alsa UCM configurations for Xiaomi Pad 5 (nabu)
+
+Package: xiaomi-nabu-firmware
+Version: 1.0
+Architecture: arm64
+Maintainer: TheMojoMan <themojoman@gmx.net>
+Conflicts: linux-firmware
+Replaces: linux-firmware
+Filename: ./xiaomi-nabu-firmware.deb
+Size: 17982252
+MD5sum: adf17c268f27598062568a7dc70955f7
+SHA1: 75bfd62a81b1f85d99e718bbd2dcc959ce38c23b
+SHA256: 8048748c2158c4c2e1f90b59e9c4fd7b28832dda0dc2f6141319b072e2c32d9d
+Description: Firmware for Xiaomi Pad 5 (nabu)
+
+Package: xiaomi-nabu-linux
+Version: 6.14.0
+Architecture: arm64
+Maintainer: TheMojoMan <themojoman@gmx.net>
+Filename: ./xiaomi-nabu-linux.deb
+Size: 50366048
+MD5sum: acf9b9dc696b3354c259be5fb07d7782
+SHA1: c3349ebad4e0f998c6dcb80b5c179427b0da1138
+SHA256: 9d81da6da374d0ee035f5587d83d89cb4a6957011d41357ede31100cf61a358d
+Section: kernel
+Description: Kernel and modules for Xiaomi Pad 5 (nabu)
+

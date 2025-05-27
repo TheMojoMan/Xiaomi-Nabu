@@ -1,0 +1,1 @@
+deb [signed-by=/etc/apt/trusted.gpg.d/themojoman.gpg] https://github.com/themojoman/xiaomi-nabu/ppa/ubuntu-plucky ./
